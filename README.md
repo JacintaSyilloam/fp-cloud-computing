@@ -23,7 +23,7 @@ Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutu
 - Berikut adalah rancangan arsitektur yang telah kami buat untuk final project kami
 ![arsitektur](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/37e9159f-92a0-439e-be1e-93a078b3abff)
 - Kami memilih untuk menggunakan Digital Ocean sebagai lingkungan cloud yang akan kami gunakan. Berikut adalah tabel harga spesifikasi VM yang kami buat <br>
-![tabel harga](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/a01e2923-4a51-400e-b937-6a994f369e1b)
+![tabel harga](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/0ceda6d0-0fd0-4f0b-99f7-19aadae14b12)
 
 ## Langkah Implementasi dan Konfigurasi Teknologi
 1. Buat database dan copy connection string
@@ -69,10 +69,28 @@ Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutu
 1. Endpoint Get Order
 - RPS Maksimum (load testing 60 detik)
 - Peak Concurrency Maksimum (spawn rate 25, load testing 60 detik)
+
 - Peak Concurrency Maksimum (spawn rate 50, load testing 60 detik)
+
 - Peak Concurrency Maksimum (spawn rate 100, load testing 60 detik)
+![0ff1b562-1038-4685-8aec-cf8ab958f8bb](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/592ebaa7-5087-453d-b39a-3dc2f339bf6b)
+
 2. Endpoint Create New Order
 - RPS Maksimum (load testing 60 detik)
 - Peak Concurrency Maksimum (spawn rate 25, load testing 60 detik)
+- Device Ilhan
+![post 25 ilhan](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/c272d432-1029-402c-9aa5-e4ca05a8ad56)
 - Peak Concurrency Maksimum (spawn rate 50, load testing 60 detik)
+- Device Ilhan
+![post 50 ilhan](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/6f6390c3-1977-4c2d-9376-5b385afc27a7)
+-Device Jacinta
+![post 50](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/aca89bf5-e4fe-4802-b6e4-856e5af0cade)
 - Peak Concurrency Maksimum (spawn rate 100, load testing 60 detik)
+- Device Ilhan
+![post 100 ilhan](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/5e2d98d1-3104-4785-8327-9d46f8179eff)
+- Device Jacinta
+![post 100](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/4eadba1c-b2c1-4377-83fd-f0c1bf1fbdd6)
+
+## Kesimpulan dan Saran
+Setelah percobaan yang kami lakukan berulang kali, jumlah load balancer sebaiknya sama dengan jumlah worker karena ketika kami mencoba menggunakan 1 load balancer dan 3 worker terjadi down pada ketiga worker tersebut
+![a78daaeb-889e-458f-aa5b-e7457f011a95](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/c11984c3-57b1-4c47-94e4-a31e02741f25)
