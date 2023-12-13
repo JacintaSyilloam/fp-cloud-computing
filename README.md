@@ -15,7 +15,7 @@
 ## Rancangan Arsitektur dan Tabel Harga Spesifikasi VM
 - Berikut adalah rancangan arsitektur yang telah kami buat untuk final project kami
 ![arsitektur](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/37e9159f-92a0-439e-be1e-93a078b3abff)
-- Kami memilih untuk menggunakan Digital Ocean sebagai lingkungan cloud yang akan kami gunakan. Berikut adalah tabel harga spesifikasi VM yang kami buat
+- Kami memilih untuk menggunakan Digital Ocean sebagai lingkungan cloud yang akan kami gunakan. Berikut adalah tabel harga spesifikasi VM yang kami buat <br>
 ![tabel harga](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/a01e2923-4a51-400e-b937-6a994f369e1b)
 
 ## Langkah Implementasi dan Konfigurasi Teknologi
