@@ -92,5 +92,6 @@ Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutu
 ![post 100](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/4eadba1c-b2c1-4377-83fd-f0c1bf1fbdd6)
 
 ## Kesimpulan dan Saran
-Setelah percobaan yang kami lakukan berulang kali, jumlah load balancer sebaiknya sama dengan jumlah worker karena ketika kami mencoba menggunakan 1 load balancer dan 3 worker terjadi down pada ketiga worker tersebut
+- Setelah melakukan pengecekan harga, harga untuk digital ocean lebih murah
+- Setelah percobaan yang kami lakukan berulang kali, jumlah load balancer sebaiknya sama dengan jumlah worker karena ketika kami mencoba menggunakan 1 load balancer dan 3 worker terjadi down pada ketiga worker tersebut
 ![a78daaeb-889e-458f-aa5b-e7457f011a95](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/c11984c3-57b1-4c47-94e4-a31e02741f25)
