@@ -20,9 +20,12 @@ Pada suatu saat teman anda ingin mengajak anda memulai bisnis di bidang digital 
 Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutuhan aplikasi tersebut. Apabila dana maksimal yang diberikan adalah 1 juta rupiah per bulan (65 US$) konfigurasi cloud terbaik seperti apa yang bisa dibuat?
 
 ## Rancangan Arsitektur dan Tabel Harga Spesifikasi VM
+Setelah melakukan berbagai pertimbangan dari segi harga hingga spesifikasi. Akhirnya kami memutuskan untuk menggunakan Digital Ocean sebagai lingkungan cloud yang akan kami gunakan. Pertimbangan ini diambil karena Digital Ocean memiliki harga yang lebih terjangkau dengan spesifikasi yang lebih tinggi dan tentunya tidak terlalu membebani device kami dibandingkan kedua opsi lainnya yaitu VM yang berat untuk device kami dan Azure yang lebih tinggi harganya.
+
 - Berikut adalah rancangan arsitektur yang telah kami buat untuk final project kami
-![arsitektur](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/37e9159f-92a0-439e-be1e-93a078b3abff)
-- Kami memilih untuk menggunakan Digital Ocean sebagai lingkungan cloud yang akan kami gunakan. Berikut adalah tabel harga spesifikasi VM yang kami buat <br>
+![arsitektur](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/936d5e63-1aa0-4a73-af8c-5176cd495a34)
+
+- Berikut adalah tabel harga spesifikasi VM yang kami buat <br>
 ![tabel harga](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/0ceda6d0-0fd0-4f0b-99f7-19aadae14b12)
 
 ## Langkah Implementasi dan Konfigurasi Teknologi
@@ -47,7 +50,10 @@ Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutu
 7. Deploy VM untuk worker dengan installasi requirement yang diperlukan di worker
 ![8d40b7fd-b13c-4b93-828f-97572effd529](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/5f72b077-ca0e-4ed1-9985-bf020010b5ae)
 
-8. Jika tidak ada error, maka worker sudah berjalan
+8. Buat Load Balancer dan pilih droplet worker yang sudah dibuat sebelumnya
+![load bal](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/521b3301-7be7-4bc0-8fa2-630f7921413b) 
+
+9. Jika tidak ada error, maka selanjutnya bisa dilakukan load tetsting locust
 
 ## Hasil Pengujian Setiap Endpoint
 1. Get All Orders
@@ -66,32 +72,22 @@ Kemudian anda diminta untuk mendesain arsitektur cloud yang sesuai dengan kebutu
 ![delete](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/127307991/a49b1ad8-2a4d-4d1e-92b4-928b081c4f3b)
 
 ## Hasil Pengujian dan Analisis Loadtesting Locust
-1. Endpoint Get Order
 - RPS Maksimum (load testing 60 detik)
+![max rps](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/041b8bbc-4ffa-42b5-b87e-a5c915baa97a)
+Pada load testing locust untuk mencari RPS maksimum yang bisa didapatkan, kami menggunakan konfigurasi 305 user dan 25 spawn rate. Didapatkan hasil average rps akhir sebesar 81,2 dengan RPS tertinggi yang sempat disentuh yaitu 143,9. Pada testing ini tidak ditemukan failure sama sekali.
+
 - Peak Concurrency Maksimum (spawn rate 25, load testing 60 detik)
+![1500 user 25 spawn rate](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/67294dcf-43a6-4279-8bb1-5000a2be40db)
+Pada load testing locust untuk spawn rate 25, peak concurrency yang kami dapat berjumlah 1500. Hasil ini didapatkan dengan failure sebesar 0% dengan RPS sebesar 42,6.
 
 - Peak Concurrency Maksimum (spawn rate 50, load testing 60 detik)
+![1400 user 50 spawn rate](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/903fa121-a0e2-46a1-b61f-18062f8dc2bc)
+Pada load testing locust untuk spawn rate 50, peak concurrency yang kami dapat berjumlah 1400. Hasil ini didapatkan dengan failure sebesar 0% dengan RPS sebesar 26,9.
 
 - Peak Concurrency Maksimum (spawn rate 100, load testing 60 detik)
-![0ff1b562-1038-4685-8aec-cf8ab958f8bb](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/592ebaa7-5087-453d-b39a-3dc2f339bf6b)
-
-2. Endpoint Create New Order
-- RPS Maksimum (load testing 60 detik)
-- Peak Concurrency Maksimum (spawn rate 25, load testing 60 detik)
-- Device Ilhan
-![post 25 ilhan](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/c272d432-1029-402c-9aa5-e4ca05a8ad56)
-- Peak Concurrency Maksimum (spawn rate 50, load testing 60 detik)
-- Device Ilhan
-![post 50 ilhan](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/6f6390c3-1977-4c2d-9376-5b385afc27a7)
--Device Jacinta
-![post 50](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/aca89bf5-e4fe-4802-b6e4-856e5af0cade)
-- Peak Concurrency Maksimum (spawn rate 100, load testing 60 detik)
-- Device Ilhan
-![post 100 ilhan](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/5e2d98d1-3104-4785-8327-9d46f8179eff)
-- Device Jacinta
-![post 100](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/4eadba1c-b2c1-4377-83fd-f0c1bf1fbdd6)
+![1200 user 100 spawn rate](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/f5b83a58-f525-4a0a-9c89-5fa3dec61783)
+Pada load testing locust untuk spawn rate 100, peak concurrency yang kami dapat berjumlah 1200. Hasil ini didapatkan dengan failure sebesar 0% dengan RPS sebesar 30,7.
 
 ## Kesimpulan dan Saran
-- Setelah melakukan pengecekan harga, harga untuk digital ocean lebih murah
-- Setelah percobaan yang kami lakukan berulang kali, jumlah load balancer sebaiknya sama dengan jumlah worker karena ketika kami mencoba menggunakan 1 load balancer dan 3 worker terjadi down pada ketiga worker tersebut
+- Setelah percobaan yang kami lakukan berulang kali, jumlah node load balancer sebaiknya scale up dengan jumlah worker karena ketika kami mencoba menggunakan 1 node load balancer dan 3 worker terjadi down pada ketiga worker tersebut
 ![a78daaeb-889e-458f-aa5b-e7457f011a95](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/c11984c3-57b1-4c47-94e4-a31e02741f25)
