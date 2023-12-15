@@ -99,5 +99,19 @@ Pada load testing locust untuk spawn rate 100, peak concurrency yang kami dapat 
     - Spawn rate yang diinput
     - Durasi pengetesan\
   Saran dari kami, ketika hendak melakukan pengetesan sesuaikan dengan kebutuhan yang ingin kalian analisis dan gunakan koneksi internet yang stabil untuk memaksimalkan proses pengujian.
+- Ternyata ketika dilakukan pengujian, database akan semakin bertambah banyak seiring frekuensi pengujian dan hal tersebut memengaruhi jumlah RPS yang dapat ditangani oleh server kami. Jadi, kuantitas database juga dapat memengaruhi performa server/applikasi yang kami buat karena beban worker VM untuk melakukan GET /orders dan POST /orders juga semakin berat.
+    - Berikut adalah hasil pengujian dengan skenario peak concurrency = 500, spawn rate = 50 dan run time = 60 detik
+<a href="https://ibb.co/xF2wpR1"><img src="https://i.ibb.co/wcd89xS/1.png" alt="1" border="0"></a>
+<a href="https://ibb.co/428kvcH"><img src="https://i.ibb.co/FX5pZ9F/2.png" alt="2" border="0"></a>
+<a href="https://ibb.co/mCs8PXv"><img src="https://i.ibb.co/99XtdVw/3.png" alt="3" border="0"></a>
+<a href="https://ibb.co/mB5tP6j"><img src="https://i.ibb.co/RSTPJzF/4.png" alt="4" border="0"></a>
+<a href="https://ibb.co/FXMKsdm"><img src="https://i.ibb.co/W0w6DRG/5.png" alt="5" border="0"></a> 
 
+    - Berikut adalah perkembangan kuantitas database pada mongodb
+<a href="https://ibb.co/8KhrFj6"><img src="https://i.ibb.co/X2w7mzS/bukti1.png" alt="bukti1" border="0"></a>
+<a href="https://ibb.co/Wx5t98m"><img src="https://i.ibb.co/mDT8sZf/bukti2.png" alt="bukti2" border="0"></a>
+<a href="https://ibb.co/mv1F3wJ"><img src="https://i.ibb.co/HN1pjs7/bukti3.png" alt="bukti3" border="0"></a>
+<a href="https://ibb.co/jT8rhRv"><img src="https://i.ibb.co/2yFkqN7/bukti4.png" alt="bukti4" border="0"></a>
+<a href="https://ibb.co/N1fH1Yp"><img src="https://i.ibb.co/6vGfvsb/bukti5.png" alt="bukti5" border="0"></a> 
 
+Jika ingin mendapatkan hasil pengujian yang akurat, maka setiap menjalankan locust atau setiap ronde pengujian sebaiknya untuk mereset database terlebih dahulu.
