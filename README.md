@@ -74,7 +74,7 @@ Setelah melakukan berbagai pertimbangan dari segi harga hingga spesifikasi. Akhi
 ## Hasil Pengujian dan Analisis Loadtesting Locust
 - RPS Maksimum (load testing 60 detik)
 ![max rps](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/041b8bbc-4ffa-42b5-b87e-a5c915baa97a)
-Pada load testing locust untuk mencari RPS maksimum yang bisa didapatkan, kami menggunakan konfigurasi 305 user dan 25 spawn rate. Didapatkan hasil average rps akhir sebesar 81,2 dengan RPS tertinggi yang sempat disentuh yaitu 143,9. Pada testing ini tidak ditemukan failure sama sekali.
+Pada load testing locust untuk mencari RPS maksimum yang bisa didapatkan, kami menggunakan konfigurasi 305 user dan 25 spawn rate. Didapatkan hasil average RPS akhir sebesar 81,2 dengan RPS tertinggi yang sempat disentuh yaitu 143,9. Pada testing ini tidak ditemukan failure sama sekali.
 
 - Peak Concurrency Maksimum (spawn rate 25, load testing 60 detik)
 ![1500 user 25 spawn rate](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/67294dcf-43a6-4279-8bb1-5000a2be40db)
