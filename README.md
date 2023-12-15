@@ -89,6 +89,15 @@ Pada load testing locust untuk spawn rate 50, peak concurrency yang kami dapat b
 Pada load testing locust untuk spawn rate 100, peak concurrency yang kami dapat berjumlah 1200. Hasil ini didapatkan dengan failure sebesar 0% dengan RPS sebesar 30,7.
 
 ## Kesimpulan dan Saran
-- Hasil pengujian menunjukkan bahwa terdapat trade-off antara jumlah maksimum concurrency dan RPS. Mengurangi jumlah maksimum concurrency dapat meningkatkan RPS, tetapi tidak secara linear.
 - Setelah percobaan yang kami lakukan berulang kali, jumlah node load balancer sebaiknya scale up dengan jumlah worker karena ketika kami mencoba menggunakan 1 node load balancer dan 3 worker terjadi down pada ketiga worker tersebut
 ![a78daaeb-889e-458f-aa5b-e7457f011a95](https://github.com/JacintaSyilloam/fp-cloud-computing/assets/115382618/c11984c3-57b1-4c47-94e4-a31e02741f25)
+- Harga yang ditawarkan Digital Ocean lebih murah daripada Azure dan sekelasnya, tetapi kami menyadari memang ada harga ada kualitas di sini. Pada beberapa kesempatan, VM worker dan load balancer kami yang telah dideploy mengalami down sehingga harus direstart bahkan worst case adalah mensetup ulang. Saran dari kami, jika hendak mendeploy projek yang besar dan budget mencukupi, silakan menggunakan layanan dari Azure, AWS, GCP dan sekelasnya yang memang ditujukan kalangan enterprise dan lebih terpercaya.
+- Terdapat banyak variabel yang berpengaruh dalam skenario pengujian locust, seperti:
+    - Koneksi internet
+    - Kuantitas dan Kualitas (spesifikasi) VM yang digunakan
+    - Peak concurrency yang diinput
+    - Spawn rate yang diinput
+    - Durasi pengetesan\
+  Saran dari kami, ketika hendak melakukan pengetesan sesuaikan dengan kebutuhan yang ingin kalian analisis dan gunakan koneksi internet yang stabil untuk memaksimalkan proses pengujian.
+
+
